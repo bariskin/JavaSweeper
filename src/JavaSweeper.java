@@ -3,14 +3,23 @@ import java.awt.*;
 
 public class JavaSweeper extends JFrame {
     private JPanel panel;
-    public static void main(String[] args) {
+    public static
+    void main(String[] args) {
         new JavaSweeper();
     }
-    private JavaSweeper()
+    private JavaSweeper() // конструктор
     {
         initPanel();
         initFrame();
     }
+
+    private void initPanel()
+    {
+        panel = new JPanel();
+        panel.setPreferredSize(new Dimension(500,500));
+        add(panel);
+    }
+
     private void initFrame()
     {
        pack();
@@ -19,12 +28,5 @@ public class JavaSweeper extends JFrame {
        setLocationRelativeTo(null);
        setResizable(false);
        setVisible(true);
-    }
-
-    private void initPanel()
-    {
-        panel = new JPanel();
-        panel.setPreferredSize(new Dimension(500,500));
-        add(panel);
     }
 }
