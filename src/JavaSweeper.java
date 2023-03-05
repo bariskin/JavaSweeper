@@ -8,7 +8,7 @@ public class JavaSweeper extends JFrame {
     private JPanel panel;
     private final int COLS = 9;
     private final int ROWS = 9;
-    private final int IMAGE_SIZE = 50;
+    private final int IMAGE_SIZE = 70;
 
     public static void main(String[] args) {
         new JavaSweeper();
@@ -30,7 +30,7 @@ public class JavaSweeper extends JFrame {
                 super.paintComponent(g);
                 for (Coord coord : Ranges.getAllCoords())
                 {
-                    g.drawImage((Image)Box.BOMB.image, coord.x * IMAGE_SIZE, coord.y * IMAGE_SIZE,this);
+                    g.drawImage((Image)Box.BOMB.values()[(coord.x + coord.y) % Box.values().length].image, coord.x * IMAGE_SIZE, coord.y * IMAGE_SIZE,this);
                 }
             }
         };
